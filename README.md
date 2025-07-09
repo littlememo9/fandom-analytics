@@ -1,7 +1,7 @@
 # Fandom Wiki Analytics
 
 Hi!   
-This is a small side project I made to practice **Python** and **SQL** on something practical and fun — fandom wiki data.
+This is a small side project I made to practice **Python** and **SQL** on something practical and fun - fandom wiki data.
 
 ## About this project
 
@@ -16,7 +16,7 @@ This script:
 ## Tools used
 
 - **Python 3**
-- **SQLite** (no separate server needed — the database is a single file)
+- **SQLite** (no separate server needed - the database is a single file)
 - `sqlite3` module (built into Python)
 
 ## How to run it
