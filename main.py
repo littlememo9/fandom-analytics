@@ -19,7 +19,7 @@ WHERE id NOT IN (
 )
 AND title = 'The Mandalorian'
 """)
-print("Removed duplicate The Mandalorian entries! 🧹")
+print("Removed duplicate The Mandalorian entries!")
 
 pages_to_add = [
     ("The Mandalorian", "https://starwars.fandom.com/wiki/The_Mandalorian", 12345, 67),
