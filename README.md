@@ -1,28 +1,28 @@
 # Fandom Wiki Analytics
 
-Cześć!  
-To jest mój mały projekt, w którym chciałam poćwiczyć **Pythona** i **SQL** na czymś praktycznym, co pasuje do świata fanowskich wiki.
+Hi!   
+This is a small side project I made to practice **Python** and **SQL** on something practical and fun — fandom wiki data.
 
-## O projekcie
+## About this project
 
-Ten skrypt:
-- Tworzy prostą bazę danych SQLite z tabelami dla stron (`pages`) i użytkowników (`users`).
-- Dodaje przykładowe rekordy stron z tytułem, linkiem, liczbą wyświetleń i edycji.
-- Sprawdza, czy strona już istnieje, żeby nie tworzyć duplikatów.
-- Czyści stare duplikaty, jeśli są.
-- Pokazuje całą zawartość tabeli.
-- Generuje ranking **TOP 5 stron według liczby wyświetleń**.
+This script:
+- Creates a simple SQLite database with two tables: `pages` and `users`.
+- Adds example pages with title, link, views, and edits.
+- Checks if a page already exists to avoid duplicates.
+- Removes old duplicates if there are any.
+- Shows the full content of the `pages` table.
+- Generates a **TOP 5 pages by number of views** ranking.
 
-## Użyte narzędzia
+## Tools used
 
 - **Python 3**
-- **SQLite** (bez dodatkowego serwera — baza działa jako plik)
-- Moduł `sqlite3` (wbudowany w Pythona)
+- **SQLite** (no separate server needed — the database is a single file)
+- `sqlite3` module (built into Python)
 
-## Jak to uruchomić
+## How to run it
 
-1. Upewnij się, że masz zainstalowanego Pythona.
-2. Otwórz terminal w folderze projektu.
-3. Wpisz:
+1. Make sure you have Python installed.
+2. Open your terminal in the project folder.
+3. Run:
    ```bash
    python main.py

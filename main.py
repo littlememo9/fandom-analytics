@@ -1,6 +1,5 @@
 import sqlite3
 
-# tabela z pliku SQL
 conn = sqlite3.connect('fandom.db')
 cursor = conn.cursor()
 
@@ -9,7 +8,7 @@ with open('create_tables.sql', 'r') as f:
 
 cursor.executescript(sql_script)
 
-print("Tabele zostały utworzone!")
+print("Tables created!")
 
 cursor.execute("""
 DELETE FROM pages
@@ -20,9 +19,8 @@ WHERE id NOT IN (
 )
 AND title = 'The Mandalorian'
 """)
-print("Usunięto duplikaty The Mandalorian! ")
+print("Removed duplicate The Mandalorian entries! 🧹")
 
-# Lista stron do dodania
 pages_to_add = [
     ("The Mandalorian", "https://starwars.fandom.com/wiki/The_Mandalorian", 12345, 67),
     ("The Last of Us", "https://thelastofus.fandom.com/wiki/The_Last_of_Us", 20000, 50),
@@ -41,19 +39,18 @@ for page in pages_to_add:
             "INSERT INTO pages (title, url, views, edits) VALUES (?, ?, ?, ?)",
             page
         )
-        print(f"Dodano: {title}")
+        print(f"Added: {title}")
     else:
-        print(f"{title} już istnieje — pominięto.")
+        print(f"{title} already exists — skipped.")
 
 cursor.execute("SELECT * FROM pages")
 rows = cursor.fetchall()
 
-print("\nZawartość tabeli pages:")
+print("\nPages table content:")
 for row in rows:
     print(row)
 
-# TOP 5 wg views
-print("\nTOP 5 stron wg liczby wyświetleń:")
+print("\nTOP 5 pages by views:")
 cursor.execute("SELECT title, views FROM pages ORDER BY views DESC LIMIT 5")
 top_pages = cursor.fetchall()
 
